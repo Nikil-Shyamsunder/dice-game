@@ -1,0 +1,63 @@
+body {
+  background-color: #404040;
+}
+
+.dice {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #8B0000;
+}
+
+.dice-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.player-title {
+  text-align: center;
+  font-weight: bold;
+  color: #008b8b;
+}
+.player-1, .player-2 {
+  margin: 0px 100px;
+}
+
+.dot {
+  background-color: white;
+  width: 75px;
+  height:75px;
+  border-radius: 50%;
+}
+
+.left-col, .right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 300px;
+}
+.right-col {
+  position: absolute;
+  left: 225px;
+  top: 0%;
+}
+
+.circle-middle {
+  position: absolute;
+  left: 113px;
+  top: 113px;
+}
+
+
+.win-msg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.invisible {
+  visibility: hidden;
+}
