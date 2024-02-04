@@ -1,21 +1,28 @@
-var player1Score = Math.floor(Math.random() * 6 + 1);
-var player2Score = Math.floor(Math.random() * 6 + 1);
+rollDice();
 
-console.log("Player 1 rolled: " + player1Score);
-console.log("Player 2 rolled: " + player2Score);
+document.querySelector("button").addEventListener("click", rollDice);
 
-if (player1Score > player2Score) {
-  document.querySelector(".win-msg").innerHTML = "<h1>Player 1 Wins!</h1>";
-}
-else if (player2Score > player1Score) {
-  document.querySelector(".win-msg").innerHTML = "<h1>Player 2 Wins!</h1>";
-}
-else {
-  document.querySelector(".win-msg").innerHTML = "<h1>It's a Tie!</h1>";
-}
+function rollDice(){
+  resetDice();
+  var player1Score = Math.floor(Math.random() * 6 + 1);
+  var player2Score = Math.floor(Math.random() * 6 + 1);
 
-setDice(".player-1", player1Score);
-setDice(".player-2", player2Score);
+  console.log("Player 1 rolled: " + player1Score);
+  console.log("Player 2 rolled: " + player2Score);
+
+  if (player1Score > player2Score) {
+    document.querySelector(".win-msg").innerHTML = "<h1>Player 1 Wins!</h1>";
+  }
+  else if (player2Score > player1Score) {
+    document.querySelector(".win-msg").innerHTML = "<h1>Player 2 Wins!</h1>";
+  }
+  else {
+    document.querySelector(".win-msg").innerHTML = "<h1>It's a Tie!</h1>";
+  }
+
+  setDice(".player-1", player1Score);
+  setDice(".player-2", player2Score);
+}
 
 function setDice(player, score){
   if (score == 1){
@@ -90,5 +97,13 @@ function setConfig6(player){
     if (i == 6) {
       dots[i].classList.add("invisible");
     }
+  }
+}
+
+function resetDice(){
+  console.log("resetting dice");
+  dots = document.querySelectorAll(".dot");
+  for (var i = 0; i < dots.length; i++){
+      dots[i].classList.remove("invisible");
   }
 }
